@@ -21,6 +21,7 @@ services:
     command: ["./scripts/workers"]
     volumes:
       - ./judge0.conf:/judge0.conf:ro
+      - judge0box:/box       # ✅ Mount for /box directory
     privileged: true
     <<: *default-logging
     restart: always
@@ -45,3 +46,5 @@ services:
 
 volumes:
   data:
+  judge0box:     # ✅ Add the volume definition here
+
